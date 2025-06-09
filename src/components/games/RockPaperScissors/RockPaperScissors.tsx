@@ -48,12 +48,11 @@ const RockPaperScissors = () => {
 
           setComputerChoice(computerChoice);
           let outcome = '';
+
           if (playersChoice === computerChoice) {
             outcome = "Draw!";
-            
-            return;
           }
-          if (winningChoices[playersChoice] === computerChoice) {
+          else if (winningChoices[playersChoice] === computerChoice) {
             setPlayerScore(prev => prev + 1);
             outcome = "You Win!"
           } else {
