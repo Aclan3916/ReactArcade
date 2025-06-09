@@ -1,0 +1,132 @@
+.page {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000; 
+  color: #FFF; 
+  height: 100vh;
+  width: 100vw;    
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  text-align: center;
+}
+/* Resource site I got the neon text from : https://css-tricks.com/how-to-create-neon-text-with-css/ */
+.neonText {
+  color: #39ff14; /* bright neon green */
+  font-weight: 600;
+  text-align: center;
+  padding: 0.3em 1em;
+  border-radius: 12px;
+  background-color: transparent;
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #39ff14,
+    0 0 40px #39ff14;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: fit-content;
+  }
+
+.gameTitle {
+  font-size: 20px;
+}
+.container {
+  color: #FFF; /* Ensure text is visible on black background */
+}
+
+.gameContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  gap: 10px;
+  padding: 10px;
+}
+
+.gameImage {
+  width:200px;
+  height:200px;
+  border-radius: 20%;
+
+}
+
+.gameRPSBox {
+  border: 2px solid rgb(50, 169, 234);
+  border-radius: 12px;
+  background-color: #000;
+  box-shadow:  
+  0 0 5px #0ff,
+  0 0 10px #0ff,
+  0 0 20px #0ff;
+  width: 300x;
+  height: 300px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in;
+}
+
+.gameRPSBox:hover {
+  transform: scale(1.1);
+}
+
+.gameTTTBox {
+  border: 2px solid #c408c4; /* Neon magenta */
+  border-radius: 12px;
+  background-color: black;
+  box-shadow:
+    0 0 5px #c408c4,
+    0 0 10px #c408c4,
+    0 0 20px #c408c4;
+  width: 300x;
+  height: 300px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in;
+}
+
+.gameTTTBox:hover {
+  transform: scale(1.1);
+}
+
+/* Official use of arcade */
+@font-face {
+    font-family: 'Volacrome';
+    src: url('./assets/fonts/Volacrome.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .volacrome {
+    font-family: 'Volacrome', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  /* Flickering animation */
+  @keyframes flicker {
+      
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0 0 4px #fff,
+        /* 0 0 11px #fff, */
+        /* 0 0 19px #fff, */
+        0 0 40px #f03,
+        0 0 80px #f03,
+        0 0 90px #f03,
+        0 0 100px #f03,
+        0 0 150px #f03;
+    
+    }
+    
+    
+    /* flicker option20%, 24%, 55% {        
+        text-shadow: none;
+    }     */
+  }

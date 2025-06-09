@@ -1,0 +1,179 @@
+:root {
+    --primary-color: #517664;
+    --dark-color: black;
+    --button-color: #78A798;
+    --button-hover-color: #517664;
+  }
+  
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: black;
+  }
+  
+  .gameboard {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 3px;
+    background-color: black;
+    padding: 5px;
+    margin-bottom: 30px;
+    position: relative; /* IMPORTANT: for positioning the animated line */
+  }
+  
+  .square {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Player pieces */
+  .circle {
+    width: 70px;
+    height: 70px;
+    border: 8px solid black;
+    border-radius: 50%;
+  }
+  
+  .cross {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    transform: rotate(45deg);
+  }
+  
+  .cross:before,
+  .cross:after {
+    content: "";
+    position: absolute;
+    background-color: rgb(240, 61, 61);
+  }
+  
+  .cross:before {
+    left: 50%;
+    width: 15%;
+    height: 100%;
+    margin-left: -15%;
+  }
+  
+  .cross:after {
+    top: 50%;
+    height: 15%;
+    width: 100%;
+    margin-top: -15%;
+  }
+  
+  /* 🔴 Winning line (base style) */
+  .line {
+    position: absolute;
+    background-color: red;
+    transition: transform 0.4s ease-in-out;
+    height: 6px;
+    z-index: 10;
+  }
+  
+  /* Horizontals */
+  .line-row1,
+  .line-row2,
+  .line-row3 {
+    transform: scaleX(0);
+    transform-origin: left center;
+    width: 100%;
+  }
+  
+  .line-row1 {
+    top: 47px;
+    left: 0;
+  }
+  .line-row2 {
+    top: 147px;
+    left: 0;
+  }
+  .line-row3 {
+    top: 247px;
+    left: 0;
+  }
+  
+  /* Verticals */
+  .line-col1,
+  .line-col2,
+  .line-col3 {
+    transform: scaleY(0);
+    transform-origin: top center;
+    width: 6px;
+    height: 100%;
+  }
+  
+  .line-col1 {
+    top: 0;
+    left: 16.66%;
+  }
+  .line-col2 {
+    top: 0;
+    left: 50%;
+  }
+  .line-col3 {
+    top: 0;
+    left: 83.33%;
+  }
+  
+  /* Diagonals */
+  .line-diag1 {
+    top: 0;
+    left: 0;
+    width: 424px; /* Diagonal of a 300x300 square: √(300² + 300²) ≈ 424 */
+    height: 6px;
+    transform: rotate(45deg) scaleX(0);
+    transform-origin: left center;
+    position: absolute;
+    background-color: red;
+    transition: transform 0.4s ease-in-out;
+  }
+  .line-diag1.active {
+    transform: rotate(45deg) scaleX(1);
+  }
+  
+  .line-diag2 {
+    top: 0;
+    left: -124px; /* 👈 shift the origin to top-right corner visually */
+    width: 424px;
+    height: 6px;
+    transform: rotate(-45deg) scaleX(0);
+    transform-origin: right center;
+    position: absolute;
+    background-color: red;
+    transition: transform 0.4s ease-in-out;
+  }
+  .line-diag2.active {
+    transform: rotate(-45deg) scaleX(1);
+  }
+  
+  /* Animation trigger class */
+  .line-row1.active,
+  .line-row2.active,
+  .line-row3.active,
+  .line-diag1.active,
+  .line-diag2.active {
+    transform: scaleX(1);
+  }
+  
+  .line-col1.active,
+  .line-col2.active,
+  .line-col3.active {
+    transform: scaleY(1);
+  }
+  

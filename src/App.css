@@ -1,0 +1,81 @@
+/* Resource site I got the neon text from : https://css-tricks.com/how-to-create-neon-text-with-css/ */
+.neonText {
+  animation: flicker 3.0s infinite alternate;
+  color: #fff;
+  font-family: 'Monoton', sans-serif;
+  border: 6px double #fff;
+  border-radius: 12px;
+  padding: 0.1em;
+  font-weight:400;
+}
+
+@font-face {
+  font-family: 'Barcade Brawl';
+  src: url('./assets/fonts/BarcadeBrawl.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.barcade-text {
+  font-family: 'Barcade Brawl', monospace;
+  text-transform: uppercase;
+}
+
+@font-face {
+  font-family: 'Karmatic Arcade';
+  src: url('./assets/fonts/KarmaticArcade.ttf') format('truetype');
+  /* font-weight: normal; */
+  font-style: normal;
+}
+
+.karmatic-text {
+  font-family: 'Karmatic Arcade', monospace;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 4.2rem;   
+
+}
+
+@font-face {
+  font-family: 'Hello Denver Display';
+  src: url('./assets/fonts/HelloDenver.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hello-denver {
+  font-family: 'Hello Denver Display', sans-serif;
+  letter-spacing: 1px;
+}
+
+@font-face {
+  font-family: 'Hello Denver Display';
+  src: url('./assets/fonts/HelloDenver.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hello-denver {
+  font-family: 'Hello Denver Display', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* Official use of arcade */
+@font-face {
+  font-family: 'Volacrome';
+  src: url('./assets/fonts/Volacrome.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.volacrome {
+  font-family: 'Volacrome', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+
+
