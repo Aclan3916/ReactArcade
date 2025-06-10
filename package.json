@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/Aclan3916/ReactArcade",
+  "homepage": "https://aclan3916.github.io/ReactArcade/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
