@@ -9,7 +9,7 @@ function App() {
 
   return (
     
-    <Router>
+    <Router basename='/ReactArcade'>
       <Routes>
        <Route path='/' element={<Home />} ></Route>
        <Route path='/rock-paper-scissors' element={<RockPaperScissors />} ></Route>
